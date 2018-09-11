@@ -30,4 +30,4 @@
 ## <b>Project Timetable</b>
 
 > 1주차
-  * 오픈API 찾기, 디자인 정하기, 기본 레이아웃 설정
+  * 오픈API 찾기, 디자인 정하기, back-end 작업
