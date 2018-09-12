@@ -1,12 +1,13 @@
 @import 'utils';
 
 .header {
-  background: $oc-blue-0;
+  //background: $oc-blue-0;
   .header-content {
-    height: 10rem;
+    height: 6rem;
     width: 1400px;
     margin: 0 auto;
     padding-left: 1rem;
+    border: 1px solid black;
 
     // 새로 가운데 정렬
     display: flex;
