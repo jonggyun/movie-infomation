@@ -6,17 +6,18 @@ const request = require('request');
 
 const url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=20120101";
 
-const movies = [
-    {
-        key: '430156241533f1d058c603178cc3ca0e',
-        targerDt: '20120101'
-    }
-];
+const def= {
+    key: '2fa3ebee376ffb9538891a8fbf0fbb1e',
+    url: 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice'
+}
 
 // 1. 일별 박스 오피스
 exports.dailyList = async (ctx) => {
+    const targetDt ='20120101';
+    console.log("im here");
     request({
-        url: "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=20120101",
+        url: def.url + "/searchDailyBoxOfficeList.json",
+        qs: { key: def.key, targetDt : targetDt },
         json: true
     }, (error, response, body) => {
         console.log(body);
@@ -25,8 +26,10 @@ exports.dailyList = async (ctx) => {
 
 // 2. 주간/주말 박스 오피스
 exports.weeklyList = async (ctx) => {
+    const targetDt = '20120101';
     request({
-        url: "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=20120101",
+        url: def.url + "/searchWeeklyBoxOfficeList.json",
+        qs: { key: def.key, targetDt: targetDt },
         json: true
     }, (error, response, body) => {
         console.log(body);
@@ -36,7 +39,8 @@ exports.weeklyList = async (ctx) => {
 // 3. 영화목록
 exports.movieList = async (ctx) => {
     request({
-        url: "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=430156241533f1d058c603178cc3ca0e",
+        url: def.url + "/searchMovieList.json",
+        qs: { key: def.key },
         json: true
     }, (error, response, body) => {
         console.log(body);
@@ -46,7 +50,8 @@ exports.movieList = async (ctx) => {
 // 4. 영화상세정보
 exports.movieInfoList = async (ctx) => {
     request({
-        url: "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=430156241533f1d058c603178cc3ca0e&movieCd=20124079",
+        url: def.url + "/searchMovieInfo.json",
+        qs: { key: def.key },
         json: true
     }, (error, response, body) => {
         console.log(body);
@@ -56,7 +61,8 @@ exports.movieInfoList = async (ctx) => {
 // 5. 영화사정보
 exports.companyList = async (ctx) => {
     request({
-        url: "http://kobis.or.kr/kobisopenapi/webservice/rest/company/searchCompanyList.json?key=430156241533f1d058c603178cc3ca0e",
+        url: def.url + "/searchCompanyList.json",
+        qs: { key: def.key },
         json: true
     }, (error, response, body) => {
         console.log(body);
@@ -66,7 +72,8 @@ exports.companyList = async (ctx) => {
 // 6. 영화사 상세정보
 exports.companyInfoList = async (ctx) => {
     request({
-        url: "http://kobis.or.kr/kobisopenapi/webservice/rest/company/searchCompanyInfo.json?key=430156241533f1d058c603178cc3ca0e&companyCd=20122497",
+        url: def.url + "/searchCompanyInfo.json",
+        qs: { key: def.key },
         json: true
     }, (error, response, body) => {
         console.log(body);
@@ -76,7 +83,8 @@ exports.companyInfoList = async (ctx) => {
 // 7. 영화인 정보
 exports.peopleList = async (ctx) => {
     request({
-        url: "http://www.kobis.or.kr/kobisopenapi/webservice/rest/people/searchPeopleList.json?key=430156241533f1d058c603178cc3ca0e",
+        url: def.url + "/searchPeopleList.json",
+        qs: { key: def.key },
         json: true
     }, (error, response, body) => {
         console.log(body);
@@ -86,7 +94,8 @@ exports.peopleList = async (ctx) => {
 // 8. 영화인 상세정보
 exports.peopleInfoList = async (ctx) => {
     request({
-        url: "http://www.kobis.or.kr/kobisopenapi/webservice/rest/people/searchPeopleInfo.json?key=430156241533f1d058c603178cc3ca0e&peopleCd=20164556",
+        url: def.url + "/searchPeopleInfo.json",
+        qs: { key: def.key },
         json: true
     }, (error, response, body) => {
         console.log(body);
