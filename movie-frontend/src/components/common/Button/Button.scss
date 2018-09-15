@@ -8,8 +8,11 @@
   height: 40px;
   width: 100px;
   margin-left: 2rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: white;
 
   &:hover { // 마우스 커서를 뒀을 때 밑줄을 그리기
-    border-bottom: 4px solid black;
+    border-bottom: 4px solid white;
   }
 }

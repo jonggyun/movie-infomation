@@ -12,10 +12,10 @@ const Header = () => (
         Movie Info.
       </div>
       <div className={cx('sub-menu')}>
-        <Button>Button1</Button>
-        <Button>Button2</Button>
-        <Button>Button3</Button>
-        <Button>Button4</Button>
+        <Button>박스오피스</Button>
+        <Button>영화정보</Button>
+        <Button>영화사정보</Button>
+        <Button>영화인정보</Button>
       </div>
     </div>
   </div>

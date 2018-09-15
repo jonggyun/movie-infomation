@@ -4,15 +4,12 @@
   background: $oc-blue-9;
   .header-content {
     height: 8rem;
-    width: 1400px;
     margin: 0 auto;
     padding-left: 1rem;
-    //border: 1px solid black;
 
     // 세로 가운데 정렬
     display: flex;
     //align-items: center;
-
     .title {
       margin-top: 1.5rem;
       font-size: 2rem;
@@ -20,13 +17,11 @@
       color: white
     }
   }
-
   .sub-menu {
     display: flex;
     align-items: center;
     height: 8rem;
     width: 50%;
     margin: 0 auto;
-    //border: 1px solid white;
   }
 }

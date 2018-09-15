@@ -8,7 +8,7 @@ import MainPage from 'components/main/MainPage';
 const cx = classNames.bind(styles);
 
 const PageTemplate = () => (
-  <div classNames={cx('page-template')}>
+  <div className={cx('page-template')}>
     <Header />
     <MainPage />
     <Footer />
