@@ -46,7 +46,7 @@ exports.movieList = async (ctx) => {
 }
 
 // 4. 영화상세정보
-exports.movieInfoList = async (ctx) => {
+exports.movieInfo = async (ctx) => {
     request({
         url: def.url + "/searchMovieInfo.json",
         qs: { key: def.key },
@@ -68,7 +68,7 @@ exports.companyList = async (ctx) => {
 }
 
 // 6. 영화사 상세정보
-exports.companyInfoList = async (ctx) => {
+exports.companyInfo = async (ctx) => {
     request({
         url: def.url + "/searchCompanyInfo.json",
         qs: { key: def.key },
@@ -90,7 +90,7 @@ exports.peopleList = async (ctx) => {
 }
 
 // 8. 영화인 상세정보
-exports.peopleInfoList = async (ctx) => {
+exports.peopleInfo = async (ctx) => {
     request({
         url: def.url + "/searchPeopleInfo.json",
         qs: { key: def.key },
