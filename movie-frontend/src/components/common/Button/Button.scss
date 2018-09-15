@@ -1,0 +1,13 @@
+@import 'utils';
+
+.button {
+  text-align: center;
+  border: 1px solid white;
+  height: 40px;
+  width: 100px;
+  margin-left: 2rem;
+
+  &:hover { // 마우스 커서를 뒀을 때 밑줄을 그리기
+    border-bottom: 2px solid black;
+  }
+}

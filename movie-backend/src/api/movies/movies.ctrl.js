@@ -4,8 +4,6 @@
 
 const request = require('request');
 
-const url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=20120101";
-
 const def= {
     key: '2fa3ebee376ffb9538891a8fbf0fbb1e',
     url: 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice'
@@ -14,7 +12,7 @@ const def= {
 // 1. 일별 박스 오피스
 exports.dailyList = async (ctx) => {
     const targetDt ='20120101';
-    console.log("im here");
+    console.log(ctx);
     request({
         url: def.url + "/searchDailyBoxOfficeList.json",
         qs: { key: def.key, targetDt : targetDt },
