@@ -1,13 +1,21 @@
-import axios from 'axios'; // REST API를 기분으로 promise를 간단하게 쓸 수 있음.
+import axios from 'axios'; // REST API를 기본으로 promise를 간단하게 쓸 수 있음.
 import queryString from 'query-string';
 
 // repNationCd: 영화구분, wideAreaCd: 상영지역
+// export const dailyList = ({repNationCd, wideAreaCd}) => {
+//   console.log('repNationCd', repNationCd);
+//   console.log('wideAreaCd', wideAreaCd);
+// }
 export const dailyList = ({
   repNationCd,
   wideAreaCd
-}) => axios.get('/api/movies/boxoffice/daily', {
+}) => 
+  axios.get(`/api/movies/boxoffice/daily?${queryString.stringify({repNationCd, wideAreaCd})}`, {
   repNationCd,
   wideAreaCd
+}).then((res) => {
+  console.log('.then function');
+  console.log(res);
 });
 // weekGb: 주간/주말/주증, repNationCd: 영화구분, wideAreaCd: 상영지역
 export const weeklyList = ({

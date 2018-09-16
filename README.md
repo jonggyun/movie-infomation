@@ -6,7 +6,7 @@
 
 ## <b>Project Duration</b>
 
-> 2018.09.10 ~ Current
+> 2018.09.10 ~ 2018.09.16(react 및 node 공부 다시하고 재시작)
 
 ## <b>Project Specification</b>
 > use Create-React-App

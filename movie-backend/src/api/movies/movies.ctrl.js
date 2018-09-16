@@ -11,14 +11,23 @@ const def= {
 
 // 1. 일별 박스 오피스
 exports.dailyList = async (ctx) => {
+    const { repNationCd, wideAreaCd } = ctx.request.body;
     const targetDt ='20120101';
-    console.log(ctx);
+    console.log("ctx.query", ctx.query);
     request({
         url: def.url + "/searchDailyBoxOfficeList.json",
-        qs: { key: def.key, targetDt : targetDt },
+        qs: { 
+            key: def.key, 
+            targetDt : targetDt,
+            repNationCd, wideAreaCd
+        },
         json: true
     }, (error, response, body) => {
-        console.log(body);
+        console.log(body.boxOfficeResult.dailyBoxOfficeList);
+        console.log(" 여기 맞지? ");
+        response.json = body;
+        ctx.body = body;
+        
     });
 }
 
@@ -55,7 +64,6 @@ exports.movieInfo = async (ctx) => {
         console.log(body);
     });
 }
-
 // 5. 영화사정보
 exports.companyList = async (ctx) => {
     request({
